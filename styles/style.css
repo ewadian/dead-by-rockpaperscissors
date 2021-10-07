@@ -1,0 +1,84 @@
+body {
+    background-color: #121212;
+    color: #fefefe;
+    font-family: 'Roboto', sans-serif;
+    font-weight:300;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+h1 {
+    font-family:  'Nosifer', serif;
+    font-size: 4rem;
+    color: #bb3530;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.3rem;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+input[type=radio]{
+    display:none;
+}
+
+input[type=radio]:checked + img {
+    border: 0px solid #fefefe;
+    filter: grayscale(0%);
+}
+
+button {
+    background-color: #bb3530;
+    color: #fefefe;
+    text-transform: uppercase;
+    font-size: 1rem;
+    text-shadow: 2px 2px black;
+    border: 0px;
+    border-radius: 50px;
+    padding: 20px;
+    margin: 10px;
+    max-width: max-content;
+    justify-content: center;
+    max-width: max-content;
+    filter: grayscale(50%);
+
+}
+
+button:hover {
+filter: grayscale(0%);
+}
+
+img {
+    filter: grayscale(90%);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+img:hover {
+    filter:grayscale(0%);
+}
+
+.hidden {
+    display: none;
+}
+
+#error {
+    color: #bb3530;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+#result, #standoff, #escaped, #sacrificed {
+    color: #bb3530;
+    font-weight: normal;
+    text-transform: uppercase;
+}
