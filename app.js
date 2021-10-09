@@ -1,36 +1,33 @@
-import { didUserWin, getRandomMove } from './utils.js';
+import { outcome } from './utils.js';
 
-const playButton = document.getElementById('play');
 const spanEscaped = document.getElementById('escaped');
 const spanSacrificed = document.getElementById('sacrificed');
 const spanStandoff = document.getElementById('standoff');
-const error = document.getElementById('error');
-const result = document.getElementById('result');
+const reset = document.getElementById('reset');
+const meg = document.getElementById('meg');
+const flashlight = document.getElementById('flashlight');
+const pig = document.getElementById('pig');
 
 let escaped = 0;
 let sacrificed = 0;
 let standoff = 0;
 
-playButton.addEventListener ('click', ()=>{
-    const selected = document.querySelector('input[type=radio]:checked');
-    if (!selected) {
-        return error.classList.remove('hidden');
-    }
+meg.addEventListener('click', ()=>{
+    outcome('meg');
+});
 
-    error.classList.add('hidden');
-    const userChoice = selected.value;
-    const actualChoice = getRandomMove();
+flashlight.addEventListener('click', ()=>{
+    outcome('flashlight');
+});
 
-    if (userChoice === actualChoice){
-        standoff++;
-        result.textContent = `It was a draw... maybe someone rage quit?`;
-    } else if (didUserWin(userChoice, actualChoice) === 'escaped'){
-        escaped++;
-        result.textContent = `rank up! they really thought they could outplay you with ${actualChoice}?`;
-    } else {
-        sacrificed++;
-        result.textContent = `rekt by ${actualChoice}.`;
-    }
+pig.addEventListener('click', ()=>{
+    outcome('pig');
+});
+
+reset.addEventListener ('click', ()=>{
+    escaped = 0;
+    sacrificed = 0;
+    standoff = 0;
 
     spanEscaped.textContent = escaped;
     spanSacrificed.textContent = sacrificed;
