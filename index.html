@@ -18,28 +18,37 @@
     <h1>Meg vs. Pig</h1>
     <h2>rock, paper, scissors... dead by daylight style</h2>
     <h3>make your choice and start the chase.</h3>
+    <button id="rules-button">rules</button>
+    <div id="rules" class="rules">
+        <div class="rules-content">
+            <p>PIG BEATS MEG.</p>
+            <p>FLASHLIGHT BEATS PIG.</p>
+            <P>MEG COLLECTS FLASHLIGHTS.</P>
+            <span class="close">close</span>
+        </div>
+    </div>
     <section>
         <label>
-            <img src="./assets/meg1.png" alt="meg" width="400px" id="meg">
+            <img src="./assets/meg1.png" alt="meg" width="400px" id="meg" class="option">
         </label>
         <label>
-            <img src="./assets/flaslight1.png" alt="flashlight" width="400px" id="flashlight">
+            <img src="./assets/flaslight1.png" alt="flashlight" width="400px" id="flashlight" class="option">
         </label>
         <label>
-            <img src="./assets/pig1.png" alt="pig" width="400px" id="pig">
+            <img src="./assets/pig1.png" alt="pig" width="400px" id="pig" class="option">
         </label>
     </section>
-    <p id="error" class="hidden">You can't stay in that locker forever... (select a move).</p>
     <section>
         <img src="./assets/pigdead.png" id="blind" class="hidden" alt="blind" width="400px">
         <img src="./assets/megdead.png" id="dead" class="hidden" alt="dead" width="400px">
         <p id="result"></p>
     </section>
-    <p>You have ranked up <span id="escaped">0</span> times.</p>
-    <p>You have been hooked <span id="sacrificed">0</span> times.</p>
-    <P><span id="standoff">0</span> standoffs so far...</P>
-    <button id="reset">rank reset</button>
-
+    <footer>
+        <p>You have ranked up <span id="escaped">0</span> times.</p>
+        <p>You have been hooked <span id="sacrificed">0</span> times.</p>
+        <P><span id="standoff">0</span> standoffs so far...</P>
+        <button id="reset">rank reset</button>
+    </footer>   
     <script type="module" src="./app.js"></script>
 </body>
 

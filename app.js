@@ -1,16 +1,8 @@
 import { outcome } from './utils.js';
 
-const spanEscaped = document.getElementById('escaped');
-const spanSacrificed = document.getElementById('sacrificed');
-const spanStandoff = document.getElementById('standoff');
-const reset = document.getElementById('reset');
 const meg = document.getElementById('meg');
 const flashlight = document.getElementById('flashlight');
 const pig = document.getElementById('pig');
-
-let escaped = 0;
-let sacrificed = 0;
-let standoff = 0;
 
 meg.addEventListener('click', ()=>{
     outcome('meg');
@@ -24,12 +16,22 @@ pig.addEventListener('click', ()=>{
     outcome('pig');
 });
 
-reset.addEventListener ('click', ()=>{
-    escaped = 0;
-    sacrificed = 0;
-    standoff = 0;
 
-    spanEscaped.textContent = escaped;
-    spanSacrificed.textContent = sacrificed;
-    spanStandoff.textContent = standoff;
-});
+let rules = document.getElementById('rules');
+let rulesButton = document.getElementById('rules-button');
+let close = document.getElementsByClassName('close')[0];
+
+
+rulesButton.onclick = function() {
+    rules.style.display = 'block';
+};
+
+close.onclick = function() {
+    rules.style.display = 'none';
+};
+
+window.onclick = function(event) {
+    if (event.target === rules) {
+        rules.style.display = 'none';
+    }
+};
